@@ -1,9 +1,12 @@
 "use client"
-
 import { useState, useEffect } from "react"
 
-export default function Toggle() {
-    const [turnOn, setTurnOn] = useState(false)
+type ToggleProps = {
+    turnOn: boolean
+    setTurnOn: (val: boolean) => void
+}
+
+export default function Toggle({ turnOn, setTurnOn }: ToggleProps) {
     const [scale, setScale] = useState(false)
 
     useEffect(() => {
@@ -21,8 +24,8 @@ export default function Toggle() {
                 style={{
                     transform: scale ? "scale(1.8)" : "scale(1)",
                 }}
-                className={`absolute h-6 w-[39px] ${scale ? "bg-white/10 backdrop-blur-md" : "bg-white"} rounded-full transition-all duration-100 ease-out z-20 mx-0.5
-                    ${turnOn ? "right-0" : "left-0"}`}
+                className={`absolute transiton-all duration-300 ease-in-out h-6 w-[39px] ${scale ? "bg-white/10 backdrop-blur-md" : "bg-white"} rounded-full transition-all duration-200 ease-in-out z-20 mx-0.5
+                    ${turnOn ? "left-[21px]" : "left-0"}`}
             ></div>
         </div>
     )
