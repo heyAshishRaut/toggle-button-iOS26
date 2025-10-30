@@ -1,6 +1,4 @@
 "use client"
-
-import { select } from "framer-motion/client"
 import { useEffect, useState } from "react"
 
 type SwitchSectionLabel = {
